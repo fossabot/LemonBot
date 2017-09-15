@@ -34,7 +34,7 @@ class OwnerTools():
     @commands.is_owner()
     async def unload(self, ctx, ext):
         if ext in self.fixed:
-            await ctx.send("Este addon no puede ser desactivado.")
+            await ctx.send("El addon **{}** no puede ser desactivado.")
             return
         self.bot.unload_extension(ext)
         await ctx.send("El addon **{}** ha sido desactivado.".format(ext))
