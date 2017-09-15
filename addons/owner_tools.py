@@ -12,7 +12,7 @@ class OwnerTools():
     @commands.is_owner()
     async def shutdown(self, ctx):
         await ctx.send("Cerrando sesion...")
-        await self.bot.logout()
+        self.bot.logout()
         sys.exit(0)
 
     @commands.command()
