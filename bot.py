@@ -16,6 +16,6 @@ if __name__ == "__main__":
     for ext in config.startup:
         try: # Intentar cargar las extensiones
             bot.load_extension("addons." + ext)
-        except e as Exception:
+        except Exception as e:
             print("Error al cargar {}: {} / {}".format(ext, type(e), e))
     bot.run(config.token)
