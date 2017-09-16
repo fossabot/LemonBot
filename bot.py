@@ -1,21 +1,27 @@
-import discord,sys
+import discord,sys,localize
 from discord.ext import commands
 from discord.ext.commands import Bot as LemonBot
-
-version = "1.0" # Version para control interno
-try: # Intentar importar la configuracion
+try:
     import config
 except ImportError:
-    print("No existe el archivo de configuracion.")
+    print("Config file not found.\nArchivo de Configuracion no encontrado.")
     sys.exit(1)
 
-bot = LemonBot(command_prefix=config.prefix) # Crear el "Bot"
+version = "1.0"
+strings = localize.LocalizeMe("strings", config.lang)
 
-if __name__ == "__main__":
+def load_addon(bot, addon):
+    try:
+        bot.load_extension("addons." + addon)
+    except Exception as e:
+        print(strings.get("base_addon_error".format(addon=ext, type=type(e), error=e)))
+
+def start_bot():
+    bot = LemonBot(command_prefix=config.prefix)
     bot.remove_command("help")
     for ext in config.startup:
-        try: # Intentar cargar las extensiones
-            bot.load_extension("addons." + ext)
-        except Exception as e:
-            print("Error al cargar {}: {} / {}".format(ext, type(e), e))
+        load_addon(bot, ext)
     bot.run(config.token)
+
+if __name__ == "__main__":
+    start_bot()
