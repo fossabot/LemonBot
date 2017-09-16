@@ -6,4 +6,5 @@
     "ot_addon_enabled": "El Addon **{addon}** ha sido activado.",
     "ot_addon_disabled": "El Addon **{addon}** ha sido desactivado.",
     "ot_addon_fixed": "El Addon **{addon}** no puede ser desactivado.",
+    "ot_addon_loaderror": "El Addon **{addon}** no existe."
 }

@@ -27,8 +27,12 @@ class OwnerTools():
     @commands.command()
     @commands.is_owner()
     async def load(self, ctx, ext):
-        self.bot.load_extension("addons." + ext)
-        await ctx.send(self.strings.get("ot_addon_enabled").format(addon=ext))
+        try:
+            self.bot.load_extension("addons." + ext)
+        except ImportError:
+            await ctx.send(self.strings.get("ot_addon_loaderror").format(addon=ext))
+        else:
+            await ctx.send(self.strings.get("ot_addon_enabled").format(addon=ext))
 
     @commands.command()
     @commands.is_owner()
