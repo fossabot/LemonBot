@@ -3,7 +3,7 @@
 
     "ot_logging_out": "Cerrando sesion...",
     "ot_guild_list": "Lista de Guilds/Servidores usando al Bot:\n\n",
-    "ot_addon_enabled": "El addon **{addon}** ha sido activado.",
-    "ot_addon_disabled": "El addon **{addon}** ha sido desactivado.",
-    "ot_addon_fixed": "El addon **{addon}** no puede ser desactivado."
+    "ot_addon_enabled": "El Addon **{addon}** ha sido activado.",
+    "ot_addon_disabled": "El Addon **{addon}** ha sido desactivado.",
+    "ot_addon_fixed": "El Addon **{addon}** no puede ser desactivado.",
 }
