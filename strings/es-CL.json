@@ -6,5 +6,9 @@
     "ot_addon_enabled": "El Addon **{addon}** ha sido activado.",
     "ot_addon_disabled": "El Addon **{addon}** ha sido desactivado.",
     "ot_addon_fixed": "El Addon **{addon}** no puede ser desactivado.",
-    "ot_addon_loaderror": "El Addon **{addon}** no existe."
+    "ot_addon_loaderror": "El Addon **{addon}** no existe.",
+
+    "music_lyrics_notfound": "La letra de **{search}** no ha sido encontrada.",
+    "music_lyrics_title": "Letra de **{song}**",
+    "music_lyrics_toobig": "La letra es muy grande para ser mostrada (mas de 2048 caracteres)."
 }
