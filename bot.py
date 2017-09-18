@@ -1,6 +1,9 @@
-import discord,sys,localize
+import discord
+import sys
+import localize
 from discord.ext import commands
 from discord.ext.commands import Bot as LemonBot
+
 try:
     import config
 except ImportError:

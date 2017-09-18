@@ -1,5 +1,8 @@
-import config,asyncio,localize
+import config
+import asyncio
+import localize
 from discord.ext import commands
+
 import sys
 
 class OwnerTools():
