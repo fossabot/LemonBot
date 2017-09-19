@@ -21,7 +21,7 @@ class ErrorHandler():
                 await ctx.send(self.strings.get("eh_owner_only"))
             elif isinstance(error, commands.MissingPermissions):
                 await ctx.send(self.strings.get("eh_user_not_allowed"))
-            elif isinstance(errorm commands.BotMissingPermissions):
+            elif isinstance(error, commands.BotMissingPermissions):
                 await ctx.send(self.strings.get("eh_bot_not_allowed"))
             else:
                 await ctx.send(self.strings.get("eh_not_defined"))
