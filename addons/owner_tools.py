@@ -1,5 +1,4 @@
 import config
-import asyncio
 import localize
 from discord.ext import commands
 
