@@ -12,4 +12,5 @@ token = "XXXXXXXXXXXX" # Token de Discord
 genius = "XXXXXXXXXXXXX" # Access de Genius
 prefix = "." # Prefijo
 lang = "es-CL" # Idioma del Bot
+dev = False # Modo desarrollo activado o desactivado
 ```

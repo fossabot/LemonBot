@@ -20,7 +20,7 @@ def load_addon(bot, addon):
 def start_bot():
     bot = LemonBot(command_prefix=config.prefix)
     bot.remove_command("help")
-    startup = ["music", "owner_tools"]
+    startup = ["error_handler", "music", "owner_tools"]
     for ext in startup:
         load_addon(bot, ext)
     bot.run(config.token)

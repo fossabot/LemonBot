@@ -1,6 +1,15 @@
 {
     "base_addon_error": "Error al cargar {addon}: {type} / {error}",
 
+    "eh_error_occurred" : "Ha ocurrido un error:",
+    "eh_param_missing": "No has introducido el parametro **{param}**",
+    "eh_private_disabled": "Este comando no puede ser usado en mensajes privados.",
+    "eh_on_cooldown": "No puedes usar este comando tan seguido, intenta en **{seg}** segundos.",
+    "eh_owner_only": "Solo el dueño del Bot puede usar este comando.",
+    "eh_user_not_allowed": "No tienes permiso para ejecutar este comando, si crees que es un error contacta a un administrador.",
+    "eh_bot_not_allowed": "El Bot no tiene permiso para realizar esta funcion.",
+    "eh_not_defined": "Ha ocurrido un error inesperado, no se logro completar la operacion.",
+
     "ot_logging_out": "Cerrando sesion...",
     "ot_guild_list": "Lista de Guilds/Servidores usando al Bot:\n\n",
     "ot_addon_enabled": "El Addon **{addon}** ha sido activado.",
