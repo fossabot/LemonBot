@@ -8,7 +8,7 @@ class OwnerTools():
     def __init__(self, bot):
         self.bot = bot
         self.strings = localize.LocalizeMe("strings", config.lang)
-        self.fixed = ["owner_tools"]
+        self.fixed = ["general", "owner_tools"]
 
     @commands.command()
     @commands.is_owner()
