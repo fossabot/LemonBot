@@ -15,7 +15,7 @@ def load_addon(bot, addon):
     try:
         bot.load_extension("addons." + addon)
     except Exception as e:
-        print(strings.get("base_addon_error".format(addon=addon, type=type(e), error=e)))
+        print(strings.get("base_addon_error").format(addon=addon, type=type(e), error=e))
 
 def start_bot():
     bot = LemonBot(command_prefix=config.prefix)
