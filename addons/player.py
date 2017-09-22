@@ -2,7 +2,6 @@ import config
 import localize
 from discord.ext import commands
 
-import youtube_dl
 from tools.discord_ytdl import YTDLSource
 
 class Player():
