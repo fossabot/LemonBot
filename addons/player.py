@@ -10,12 +10,7 @@ class Player():
         self.bot = bot
         self.strings = localize.LocalizeMe("strings", config.lang)
 
-    @commands.group()
-    async def music(self, ctx):
-        if ctx.subcommand_passed is None:
-            await ctx.send(self.strings.get("base_subcommand_none"))
-
-    @music.command()
+    @commands.command()
     async def join(self, ctx):
         if ctx.author.voice.channel is not None:
             if ctx.voice_client is not None:
@@ -26,7 +21,7 @@ class Player():
         else:
             await ctx.send(self.strings.get("music_channel_nope"))
 
-    @music.command()
+    @commands.command()
     async def play(self, ctx, *, url : str):
         if ctx.voice_client is None:
             return await ctx.send(self.strings.get("music_channel_nope"))
@@ -39,7 +34,7 @@ class Player():
         
         await ctx.send(self.strings.get("music_play_now").format(song=player.title))
 
-    @music.command()
+    @commands.command()
     async def volume(self, ctx, volume : int):
         if ctx.voice_client is None:
             return await ctx.send(self.strings.get("music_channel_nope"))
@@ -47,7 +42,7 @@ class Player():
         ctx.voice_client.source.volume = volume
         await ctx.send(self.strings.get("music_volume_set").format(volume=volume))
 
-    @music.command()
+    @commands.command()
     async def stop(self, ctx):
         await ctx.voice_client.disconnect()
 
