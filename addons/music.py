@@ -27,7 +27,7 @@ class Music():
     @commands.group()
     async def music(self, ctx):
         if ctx.subcommand_passed is None:
-            await ctx.send(self.strings.get("music_base_subcommand_none"))
+            await ctx.send(self.strings.get("base_subcommand_none"))
 
     @music.command()
     async def join(self, ctx):

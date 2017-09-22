@@ -1,5 +1,6 @@
 {
     "base_addon_error": "Error al cargar {addon}: {type} / {error}",
+    "base_subcommand_none": "No has especificado una accion para realizar.",
 
     "eh_error_occurred" : "Ha ocurrido un error:",
     "eh_param_missing": "No has introducido el parametro **{param}**",
@@ -23,7 +24,6 @@
     "music_lyrics_notfound": "La letra de **{search}** no ha sido encontrada.",
     "music_lyrics_title": "Letra de **{song}**",
     "music_lyrics_toobig": "La letra es muy grande para ser mostrada (mas de 2048 caracteres).",
-    "music_base_subcommand_none": "No has especificado una accion para realizar.",
     "music_join_connected": "Conectado satisfactoriamente a **{channel}**.",
     "music_channel_nope": "No estas en un canal de voz para escuchar musica.",
     "music_volume_set": "El volumen del reproductor ha sido establecido en un **{volume}**%",
