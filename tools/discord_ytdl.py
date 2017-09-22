@@ -2,7 +2,7 @@ import discord
 from youtube_dl import YoutubeDL
 
 ytdl_options = {
-    "format': "bestaudio/best",
+    "format": "bestaudio/best",
     "outtmpl": "music/%(extractor)s-%(id)s.%(ext)s",
     "restrictfilenames": True,
     "noplaylist": True,
