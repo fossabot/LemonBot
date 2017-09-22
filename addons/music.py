@@ -24,15 +24,6 @@ class Music():
         except discord.HTTPException:
             await ctx.send(self.strings.get("music_lyrics_toobig"))
 
-    @commands.group()
-    async def fm(self, ctx):
-        if ctx.subcommand_passed is None:
-            await ctx.send(self.strings.get("base_subcommand_none"))
-
-    @fm.command()
-    async def song(self, ctx):
-        None
-
 def setup(bot):
     bot.add_cog(Music(bot))
     
