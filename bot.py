@@ -1,4 +1,5 @@
 import sys
+import os
 import localize
 from discord.ext.commands import Bot as LemonBot
 
@@ -11,18 +12,18 @@ except ImportError:
 version = "1.0"
 strings = localize.LocalizeMe("strings", config.lang)
 
-def load_addon(bot, addon):
-    try:
-        bot.load_extension("addons." + addon)
-    except Exception as e:
-        print(strings.get("base_addon_error").format(addon=addon, type=type(e), error=e))
+def load_addons(bot):
+    for addon in os.listdir("addons"):
+        if addon.endswith(".py"):
+            try:
+                bot.load_extension("addons." + os.path.splitext(addon)[0])
+            except Exception as e:
+                print(strings.get("base_addon_error").format(addon=addon, type=type(e), error=e))
 
 def start_bot():
     bot = LemonBot(command_prefix=config.prefix)
     bot.remove_command("help")
-    startup = ["error_handler", "music", "owner_tools"]
-    for ext in startup:
-        load_addon(bot, ext)
+    load_addons(bot)
     bot.run(config.token)
 
 if __name__ == "__main__":
