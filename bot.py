@@ -17,7 +17,7 @@ def load_addons(bot):
         if addon.endswith(".py"):
             try:
                 bot.load_extension("addons." + os.path.splitext(addon)[0])
-            except Exception as e:
+            except ImportError as e:
                 print(strings.get("base_addon_error").format(addon=addon, type=type(e), error=e))
 
 def start_bot():
