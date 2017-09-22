@@ -1,4 +1,5 @@
 import discord
+import asyncio
 from youtube_dl import YoutubeDL
 
 ytdl_options = {
