@@ -17,7 +17,7 @@ class Player():
                 await ctx.voice_client.move_to(ctx.author.voice.channel)
             else:
                 await ctx.author.voice.channel.connect()
-            await ctx.send(self.strings.get("music_join_connected").format(channel=ctx.voice_client.channel.name))
+            await ctx.send(self.strings.get("music_join_connected").format(channel=ctx.author.voice.channel.name))
         else:
             await ctx.send(self.strings.get("music_channel_nope"))
 
