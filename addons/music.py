@@ -22,7 +22,7 @@ class Music():
         try:
             await ctx.send(embed=embed)
         except discord.HTTPException:
-            await ctx.send(self.strings.get("music_lyrics_toobig"))
+            await ctx.send(self.strings.get("music_lyrics_toobig").format(url=song.url))
 
 def setup(bot):
     bot.add_cog(Music(bot))
