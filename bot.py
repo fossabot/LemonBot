@@ -1,12 +1,6 @@
 import sys
 import os
 
-try:
-    import config
-except ImportError:
-    print("Configuration file not found.")
-    sys.exit(1)
-
 version = "1.0"
 
 def load_addons(bot):
@@ -18,7 +12,14 @@ def load_addons(bot):
                 print("Error loading {}: {} / {}".format(addon, type(e), e))
 
 def start_bot():
+    try:
+        import config
+    except ImportError:
+        print("Configuration file not found.")
+        sys.exit(1)
+
     from discord.ext.commands import Bot as LemonBot
+    
     bot = LemonBot(command_prefix=config.prefix)
     bot.remove_command("help")
     load_addons(bot)
