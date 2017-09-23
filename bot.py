@@ -1,6 +1,5 @@
 import sys
 import os
-from discord.ext.commands import Bot as LemonBot
 
 try:
     import config
@@ -19,6 +18,7 @@ def load_addons(bot):
                 print("Error loading {}: {} / {}".format(addon, type(e), e))
 
 def start_bot():
+    from discord.ext.commands import Bot as LemonBot
     bot = LemonBot(command_prefix=config.prefix)
     bot.remove_command("help")
     load_addons(bot)
