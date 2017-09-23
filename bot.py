@@ -1,16 +1,14 @@
 import sys
 import os
-import localize
 from discord.ext.commands import Bot as LemonBot
 
 try:
     import config
 except ImportError:
-    print("Config file not found.\nArchivo de Configuracion no encontrado.")
+    print("Configuration file not found.")
     sys.exit(1)
 
 version = "1.0"
-strings = localize.LocalizeMe("strings", config.lang)
 
 def load_addons(bot):
     for addon in os.listdir("addons"):
@@ -18,7 +16,7 @@ def load_addons(bot):
             try:
                 bot.load_extension("addons." + os.path.splitext(addon)[0])
             except ImportError as e:
-                print(strings.get("base_addon_error").format(addon=addon, type=type(e), error=e))
+                print("Error loading {}: {} / {}".format(addon, type(e), e))
 
 def start_bot():
     bot = LemonBot(command_prefix=config.prefix)

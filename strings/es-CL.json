@@ -1,5 +1,4 @@
 {
-    "base_addon_error": "Error al cargar {addon}: {type} / {error}",
     "base_subcommand_none": "No has especificado una accion para realizar.",
 
     "eh_error_occurred" : "Ha ocurrido un error:",
