@@ -1,7 +1,7 @@
 .. _index:
 
-LemonBot: Un Bot para Discord con variadas opciones
-====================================================
+LemonBot: Un humilde Bot de Discord
+====================================
 
 Bienvenido a la documentacion de Lemon, un Bot Open Source desarrollado por `Lemon Development Team`_ para satisfacer a varias comunidades en Discord.
 
