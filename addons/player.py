@@ -2,7 +2,7 @@ import config
 import localize
 from discord.ext import commands
 
-from tools.discord_ytdl import YTDLSource
+from addon.tools.ytdl import YTDLSource
 
 class Player():
     def __init__(self, bot):
