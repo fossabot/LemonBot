@@ -9,6 +9,7 @@ Bienvenido a la documentacion de Lemon, un Bot Open Source desarrollado por `Lem
    :maxdepth: 2
 
    commands
+   development
    about
 
 .. _`Lemon Development Team`: https://github.com/LemonDevelopment
