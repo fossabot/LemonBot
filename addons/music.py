@@ -4,7 +4,6 @@ from discord.ext import commands
 
 import genius
 import discord
-from monstercat.client import MonstercatFM
 
 class Music():
     def __init__(self, bot):
