@@ -1,29 +1,24 @@
-import sys
-import os
+import discord
+from discord.ext import commands
+from discord.ext.commands import Bot as LemonBot
 
-version = "1.0"
+try:
+    import config
+except:
+    print("No se ha encontrado la configuracion, renombra \"template_config.py\" a \"config.py\" y editalo con la informacion correspondiente e intenta otra vez.")
+    exit()
 
-def load_addons(bot):
-    for addon in os.listdir("addons"):
-        if addon.endswith(".py"):
-            try:
-                bot.load_extension("addons." + os.path.splitext(addon)[0])
-            except ImportError as e:
-                print("Error loading {}: {} / {}".format(addon, type(e), e))
+version = "0.1b"
+bot = LemonBot(command_prefix=config.prefix)
+print("Iniciando LemonBot v{}\n".format(version))
 
-def start_bot():
-    try:
-        import config
-    except ImportError:
-        print("Configuration file not found.")
-        sys.exit(1)
-
-    from discord.ext.commands import Bot as LemonBot
+@bot.event
+async def on_ready():
+    await bot.change_presence(game=discord.Game(name = "v" + version))
     
-    bot = LemonBot(command_prefix=config.prefix)
-    bot.remove_command("help")
-    load_addons(bot)
-    bot.run(config.token)
-
 if __name__ == "__main__":
-    start_bot()
+    bot.remove_command("help")
+    for ext in config.startup:
+        bot.load_extension("addons." + ext)
+
+bot.run(config.token)

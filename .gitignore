@@ -1,4 +1,5 @@
-config.py
 __pycache__/
-music/
-bdocs/
+build_docs/
+config.py
+*.pyc
+*.log

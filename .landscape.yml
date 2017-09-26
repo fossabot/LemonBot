@@ -1,8 +1,0 @@
-python-targets:
-  - 3
-pep8:
-  full: true
-requirements:
-  - reqs.txt
-  - rtfd.txt
-autodetect: true
