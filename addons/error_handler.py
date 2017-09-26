@@ -1,11 +1,11 @@
 import config
-import localize
+from addons.tools.localize import LocalizeMe
 from discord.ext import commands
 
 class ErrorHandler():
     def __init__(self, bot):
         self.bot = bot
-        self.strings = localize.LocalizeMe("strings", config.lang)
+        self.strings = LocalizeMe("strings", config.lang)
 
     async def on_command_error(self, ctx, error):
         if config.dev:

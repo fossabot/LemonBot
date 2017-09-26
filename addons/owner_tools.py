@@ -1,5 +1,5 @@
 import config
-import localize
+from addons.tools.localize import LocalizeMe
 from discord.ext import commands
 
 import sys
@@ -7,7 +7,7 @@ import sys
 class OwnerTools():
     def __init__(self, bot):
         self.bot = bot
-        self.strings = localize.LocalizeMe("strings", config.lang)
+        self.strings = LocalizeMe("strings", config.lang)
         self.fixed = ["general", "owner_tools"]
 
     @commands.command()

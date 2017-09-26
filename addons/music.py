@@ -1,5 +1,5 @@
 import config
-import localize
+from addons.tools.localize import LocalizeMe
 from discord.ext import commands
 
 import genius
@@ -9,7 +9,7 @@ from monstercat.client import MonstercatFM
 class Music():
     def __init__(self, bot):
         self.bot = bot
-        self.strings = localize.LocalizeMe("strings", config.lang)
+        self.strings = LocalizeMe("strings", config.lang)
         self.mcat = MonstercatFM("LemonBot by JustALemon")
         self.genius = genius.Genius(config.genius)
 

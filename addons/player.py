@@ -1,13 +1,13 @@
 import config
-import localize
+from addons.tools.localize import LocalizeMe
 from discord.ext import commands
 
-from addon.tools.ytdl import YTDLSource
+from addons.tools.ytdl import YTDLSource
 
 class Player():
     def __init__(self, bot):
         self.bot = bot
-        self.strings = localize.LocalizeMe("strings", config.lang)
+        self.strings = LocalizeMe("strings", config.lang)
 
     @commands.command()
     async def join(self, ctx):
