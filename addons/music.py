@@ -9,7 +9,6 @@ class Music():
     def __init__(self, bot):
         self.bot = bot
         self.strings = LocalizeMe("strings", config.lang)
-        self.mcat = MonstercatFM("LemonBot by JustALemon")
         self.genius = genius.Genius(config.genius)
 
     @commands.command()
