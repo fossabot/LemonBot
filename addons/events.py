@@ -2,7 +2,7 @@ import config
 from addons.tools.localize import LocalizeMe
 from discord.ext import commands
 
-class ErrorHandler():
+class Events():
     def __init__(self, bot):
         self.bot = bot
         self.strings = LocalizeMe("strings", config.lang)
@@ -27,4 +27,4 @@ class ErrorHandler():
                 await ctx.send(self.strings.get("eh_not_defined"))
 
 def setup(bot):
-    bot.add_cog(ErrorHandler(bot))
+    bot.add_cog(Events(bot))
