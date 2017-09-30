@@ -14,7 +14,7 @@ class Info():
     @commands.command(aliases=["help", "about"])
     async def info(self, ctx):
         embed = discord.Embed(
-            title=self.strings.get("general_title"),
+            title=self.strings.get("general_title").format(bot.name),
             description=self.strings.get("general_description").format(c=bot.bhelp, r=bot.repo),
             url=bot.webpage,
             colour=0xe95420

@@ -2,6 +2,7 @@ import sys
 import os
 
 version = "1.0"
+name = "LemonBot"
 webpage = "http://bot.justalemon.ml"
 bhelp = "http://bot.justalemon.ml/commands.html"
 repo = "https://github.com/Lemon-CL/LemonBot"

@@ -10,7 +10,7 @@
     "eh_bot_not_allowed": "El Bot no tiene permiso para realizar esta funcion.",
     "eh_not_defined": "Ha ocurrido un error inesperado, no se logro completar la operacion.",
 
-    "general_title": "Informacion de LemonBot",
+    "general_title": "Informacion y Ayuda de {}",
     "general_description": "Comandos: {c}\nRepositorio: {r}",
     "general_botversion": "Version de LemonBot:",
     "general_pyversion": "Version de Python:",
