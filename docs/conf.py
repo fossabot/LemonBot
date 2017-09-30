@@ -6,7 +6,7 @@ import bot
 
 master_doc = "index"
 project = "LemonBot"
-copyright = "2017 Lemon Development Team"
+copyright = bot.copyright
 version = bot.version
 language = "es"
 html_theme = "bootstrap"

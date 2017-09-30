@@ -3,6 +3,7 @@ import os
 
 version = "1.0-beta.1"
 name = "LemonBot"
+copyright = "2017 Lemon"
 webpage = "http://bot.justalemon.ml"
 bhelp = "http://bot.justalemon.ml/commands.html"
 repo = "https://github.com/Lemon-CL/LemonBot"
