@@ -11,13 +11,13 @@ General
 --------
 .. code::
 
-    .info
+    &info
 
 Muestra informacion general sobre el Bot tales como la version, soporte y repositorio.
 
 .. code::
 
-    .help
+    &help
 
 Devuelve un enlace a esta pagina para ver los comandos del Bot.
 
@@ -25,7 +25,7 @@ Musica
 -------
 .. code::
 
-    .lyrics <cancion>
+    &lyrics <cancion>
 
 Busca y obtiene las letras de una cancion desde Genius_.
 
@@ -41,23 +41,23 @@ Herramientas del Dueño
 
 .. code::
 
-    .shutdown
+    &shutdown
 
 Cierra la sesion del Bot y se desconecta satisfactoriamente.
 
 .. code::
 
-    .guilds
+    &guilds
 
 Muestra una lista Guilds / Servidores a las que el Bot tiene acceso junto al numero de estas.
 
 .. code::
 
-    .load <addon>
+    &load <addon>
 
 .. code::
 
-    .unload <addon>
+    &unload <addon>
 
 Carga o Descarga un Addon o Cog desde su respectiva carpeta.
 
@@ -69,25 +69,25 @@ Reproductor de Musica
 
 .. code::
 
-    .join
+    &join
 
 Si el autor del comando esta en un canal de voz, el Bot se unira a este.
 
 .. code::
 
-    .play <search|url>
+    &play <search|url>
 
 Busca un video en YouTube o especifica una URL para reproducir. Puedes encontrar una lista de servicios disponibles en la pagina web de YouTubeDl_.
 
 .. code::
 
-    .volume <percentage>
+    &volume <percentage>
 
 Establece el volumen del reproductor. El parametro esta basado en porcentaje, en donde 1 es 1% y 75 es 75%.
 
 .. code::
 
-    .stop
+    &stop
 
 Detiene la reproduccion y deja el canal de voz.
 
