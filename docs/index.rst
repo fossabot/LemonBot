@@ -14,6 +14,6 @@ Puedes agregar el Bot a tu servidor usando `este link`_, opcionalmente puedes ve
    development
    about
 
-.. _`Lemon Development Team`: https://github.com/Lemon-CL
+.. _`Lemon`: https://github.com/Lemon-CL
 .. _`este link`: http://invite.bot.justalemon.ml
 .. _`GitHub`: https://github.com/Lemon-CL/LemonBot
