@@ -1,7 +1,7 @@
 import sys
 import os
 
-version = "1.0"
+version = "1.0-beta.1"
 name = "LemonBot"
 webpage = "http://bot.justalemon.ml"
 bhelp = "http://bot.justalemon.ml/commands.html"
