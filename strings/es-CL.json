@@ -10,8 +10,11 @@
     "eh_bot_not_allowed": "El Bot no tiene permiso para realizar esta funcion.",
     "eh_not_defined": "Ha ocurrido un error inesperado, no se logro completar la operacion.",
 
-    "general_info": "http://bot.lemondev.ml",
-    "general_commands": "http://bot.lemondev.ml/commands.html",
+    "general_title": "Informacion de LemonBot",
+    "general_description": "Comandos: {c}\nRepositorio: {r}",
+    "general_botversion": "Version de LemonBot:",
+    "general_pyversion": "Version de Python:",
+    "general_dpyversion": "Version de discord.py:",
 
     "ot_logging_out": "Cerrando sesion...",
     "ot_guild_list": "Lista de Guilds/Servidores usando al Bot:\n\n",
