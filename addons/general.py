@@ -16,7 +16,8 @@ class Info():
         embed = discord.Embed(
             title=self.strings.get("general_title"),
             description=self.strings.get("general_description").format(c=bot.bhelp, r=bot.repo),
-            url=bot.webpage
+            url=bot.webpage,
+            colour=0xe95420
         )
         embed.add_field(name=self.strings.get("general_botversion"), value=bot.version)
         embed.add_field(name=self.strings.get("general_pyversion"), value=sys.version.split()[0])
