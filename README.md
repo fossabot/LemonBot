@@ -1,5 +1,5 @@
 [![Code Health](https://landscape.io/github/Lemon-CL/LemonBot/master/landscape.svg?style=flat-square)](https://landscape.io/github/Lemon-CL/LemonBot/master)
-[![Read The Docs](https://media.readthedocs.org/static/projects/badges/passing.svg?style=flat-square)](http://bot.justalemon.ml)
+[![Read The Docs](https://readthedocs.org/projects/lemonbot/badge/?style=flat-square)](http://bot.justalemon.ml)
 # LemonBot: Un humilde Bot de Discord
 LemonBot es un Bot de Discord creado para mejorar o ampliar funciones que no existen en bots actuales.
 
