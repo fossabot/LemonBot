@@ -11,6 +11,7 @@ repo = "https://github.com/Lemon-CL/LemonBot"
 sys.path.append(os.path.abspath(".."))
 
 def load_addons(bot):
+    """Carga los archivos de Python desde \"addons\""""
     for addon in os.listdir("addons"):
         if addon.endswith(".py"):
             try:
@@ -19,6 +20,7 @@ def load_addons(bot):
                 print("Error loading {}: {} / {}".format(addon, type(e), e))
 
 def start_bot():
+    """Inicia al Bot normalmente"""
     try:
         import config
     except ImportError:
@@ -26,7 +28,6 @@ def start_bot():
         sys.exit(1)
 
     from discord.ext.commands import Bot as LemonBot
-    
     bot = LemonBot(command_prefix=config.prefix)
     bot.remove_command("help")
     load_addons(bot)
