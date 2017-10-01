@@ -8,6 +8,8 @@ webpage = "http://bot.justalemon.ml"
 bhelp = "http://bot.justalemon.ml/commands.html"
 repo = "https://github.com/Lemon-CL/LemonBot"
 
+sys.path.append(os.path.abspath(".."))
+
 def load_addons(bot):
     for addon in os.listdir("addons"):
         if addon.endswith(".py"):
