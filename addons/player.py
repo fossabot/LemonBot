@@ -26,11 +26,10 @@ class Player():
             return await ctx.send(self.strings.get("music_channel_nope"))
 
         if ctx.voice_client.is_playing():
-            ctx.voice_client.stop()
+            return await ctx.send(self.strings.get("music_play_already"))
 
         player = await YTDLSource.from_url(url, loop=self.bot.loop)
         ctx.voice_client.play(player, after=lambda e: print(self.strings.get("music_play_error").format(e)) if e else None)
-        
         await ctx.send(self.strings.get("music_play_now").format(song=player.title))
 
     @commands.command()
@@ -47,4 +46,3 @@ class Player():
 
 def setup(bot):
     bot.add_cog(Player(bot))
-    

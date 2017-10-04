@@ -28,6 +28,7 @@
     "music_lyrics_toobig": "La letra es muy grande para ser mostrada (mas de 2048 caracteres).\nPuedes verla aqui: {url}",
     "music_join_connected": "Conectado satisfactoriamente a **{channel}**.",
     "music_channel_nope": "No estas en un canal de voz para escuchar musica.",
+    "music_play_already": "No puedes colocar esa cancion, ya existe una reproduciendose.",
     "music_volume_set": "El volumen del reproductor ha sido establecido en un **{volume}**%",
     "music_play_now": "Estas escuchando: **{song}**.",
     "music_play_error": "Ha ocurrido un error al obtener la cancion: {error}."
