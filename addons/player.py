@@ -8,11 +8,12 @@ class Player():
     @commands.command()
     async def join(self, ctx):
         if ctx.author.voice.channel is not None:
-            if ctx.voice_client is not None:
-                await ctx.voice_client.move_to(ctx.author.voice.channel)
-            else:
+            if ctx.voice_client is None:
                 await ctx.author.voice.channel.connect()
-            await ctx.send(self.bot.loc("music_join_connected").format(ctx.author.voice.channel.name))
+            else:
+                await ctx.voice_client.move_to(ctx.author.voice.channel)
+            await ctx.send(self.bot.loc("music_join_connected").format(
+                ctx.author.voice.channel.name))
         else:
             await ctx.send(self.bot.loc("music_join_nope"))
 
