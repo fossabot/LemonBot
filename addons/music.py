@@ -1,7 +1,5 @@
-import config
-from addons.tools.localize import LocalizeMe
 from discord.ext import commands
-
+import config
 import discord
 import requests
 from bs4 import BeautifulSoup
@@ -9,7 +7,6 @@ from bs4 import BeautifulSoup
 class Music():
     def __init__(self, bot):
         self.bot = bot
-        self.strings = LocalizeMe("strings", config.lang)
 
     @commands.command()
     async def lyrics(self, ctx, *, query : str):
@@ -23,13 +20,13 @@ class Music():
             l = s.find("div", class_="lyrics").get_text().strip()
 
             embed = discord.Embed(
-                title=self.strings.get("music_lyrics_title").format(song=r["title_with_featured"]),
+                title=self.bot.loc("music_lyrics_title").format(song=r["title_with_featured"]),
                 description=l, url=r["url"])
             embed.set_thumbnail(url=r["header_image_thumbnail_url"])
         except IndexError:
-            await ctx.send(self.strings.get("music_lyrics_notfound").format(search=query))
+            await ctx.send(self.bot.loc("music_lyrics_notfound").format(search=query))
         except discord.HTTPException:
-            await ctx.send(self.strings.get("music_lyrics_toobig").format(url=r["url"]))
+            await ctx.send(self.bot.loc("music_lyrics_toobig").format(url=r["url"]))
         else:
             await ctx.send(embed=embed)
 

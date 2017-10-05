@@ -1,37 +1,46 @@
 import sys
 import os
-
-version = "1.0-beta.1"
-name = "LemonBot"
-copy = "2017 Lemon"
-webpage = "http://bot.justalemon.ml"
-bhelp = "http://bot.justalemon.ml/commands.html"
-repo = "https://github.com/Lemon-CL/LemonBot"
+import logging
+import json
+import config
+from discord.ext import commands
 
 sys.path.append(os.path.abspath(".."))
 
-def load_addons(bot):
-    """Carga los archivos de Python desde \"addons\""""
-    for addon in os.listdir("addons"):
-        if addon.endswith(".py"):
-            try:
-                bot.load_extension("addons." + os.path.splitext(addon)[0])
-            except ImportError as e:
-                print("Error loading {}: {} / {}".format(addon, type(e), e))
+class LemonBot(commands.Bot):
+    "Base de LemonBot"
+    def __init__(self):
+        super().__init__(command_prefix=config.prefix)
+        self.version = "1.0-beta.1"
+        self.name = "LemonBot"
+        self.copy = "2017 Lemon"
+        self.lang = config.lang
+        self.dev = config.dev
+        self.web = "http://bot.justalemon.ml"
+        self.help = self.web + "/commands.html"
+        self.repo = "https://github.com/Lemon-CL/LemonBot"
+        self.log = logging.getLogger(self.name)
+        self.db = None # Porcia}
+        self.prefix = config.prefix
 
-def start_bot():
-    """Inicia al Bot normalmente"""
-    try:
-        import config
-    except ImportError:
-        print("Configuration file not found.")
-        sys.exit(1)
+        self.remove_command("help")
 
-    from discord.ext.commands import Bot as LemonBot
-    bot = LemonBot(command_prefix=config.prefix)
-    bot.remove_command("help")
-    load_addons(bot)
-    bot.run(config.token)
+        for addon in os.listdir("addons"):
+            if addon.endswith(".py"):
+                addon_name = os.path.splitext(addon)[0]
+                try:
+                    self.load_extension("addons." + addon_name)
+                except Exception as e:
+                    print("Error loading {}: {} / {}".format(addon, type(e), e))
+
+    def loc(self, string: str, lang: str = None):
+        if lang is None:
+            lang = self.lang
+        with open("strings/" + lang + ".json") as of:
+            text = of.read()
+        j = json.loads(text)
+        return j[string]
 
 if __name__ == "__main__":
-    start_bot()
+    bot = LemonBot()
+    bot.run(config.token)
