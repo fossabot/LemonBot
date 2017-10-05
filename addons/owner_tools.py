@@ -14,8 +14,7 @@ class OwnerTools():
     @commands.is_owner()
     async def shutdown(self, ctx):
         await ctx.send(self.strings.get("ot_logging_out"))
-        self.bot.logout()
-        sys.exit(0)
+        await self.bot.logout()
 
     @commands.command()
     @commands.is_owner()
