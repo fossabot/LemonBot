@@ -32,7 +32,7 @@
     "music_join_connected": "Conectado satisfactoriamente a **{}**.",
     "music_join_nope": "Debes estar en un canal de voz para escuchar musica.",
     "music_play_nope": "El Bot no esta conectado a un canal de voz.",
-    "music_play_already": "Ya hay una cancion reproduciendose en este canal, intenta cuando termine.",
+    "music_play_already": "Ya hay una cancion reproduciendose en este servidor, intenta cuando termine.",
     "music_play_now": "Estas escuchando: **{}**.",
     "music_volume_nope": "El Bot no esta reproduciendo musica, por lo tanto no puede establecer el volumen.",
     "music_volume_set": "El volumen del reproductor ha sido establecido en **{}**%"
