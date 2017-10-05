@@ -20,13 +20,13 @@ class Music():
             l = s.find("div", class_="lyrics").get_text().strip()
 
             embed = discord.Embed(
-                title=self.bot.loc("music_lyrics_title").format(song=r["title_with_featured"]),
+                title=self.bot.loc("music_lyrics_title").format(r["title_with_featured"]),
                 description=l, url=r["url"])
             embed.set_thumbnail(url=r["header_image_thumbnail_url"])
         except IndexError:
-            await ctx.send(self.bot.loc("music_lyrics_notfound").format(search=query))
+            await ctx.send(self.bot.loc("music_lyrics_notfound").format(query))
         except discord.HTTPException:
-            await ctx.send(self.bot.loc("music_lyrics_toobig").format(url=r["url"]))
+            await ctx.send(self.bot.loc("music_lyrics_toobig").format(r["url"]))
         else:
             await ctx.send(embed=embed)
 

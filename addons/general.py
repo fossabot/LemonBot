@@ -16,9 +16,12 @@ class Info():
             url=self.bot.web,
             colour=0xe95420
         )
-        embed.add_field(name=self.bot.loc("general_botversion"), value=self.bot.version)
-        embed.add_field(name=self.bot.loc("general_pyversion"), value=sys.version.split()[0])
-        embed.add_field(name=self.bot.loc("general_dpyversion"), value=discord.__version__)
+        embed.add_field(name=self.bot.loc("general_version_bot"),
+                        value=self.bot.version)
+        embed.add_field(name=self.bot.loc("general_version_py"),
+                        value=sys.version.split()[0])
+        embed.add_field(name=self.bot.loc("general_version_dpy"),
+                        value=discord.__version__)
         await ctx.send(embed=embed)
 
 def setup(bot):

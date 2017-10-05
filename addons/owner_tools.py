@@ -26,18 +26,18 @@ class OwnerTools():
         try:
             self.bot.load_extension("addons." + ext)
         except ImportError:
-            await ctx.send(self.bot.loc("ot_addon_loaderror").format(addon=ext))
+            await ctx.send(self.bot.loc("ot_addon_loaderror").format(ext))
         else:
-            await ctx.send(self.bot.loc("ot_addon_enabled").format(addon=ext))
+            await ctx.send(self.bot.loc("ot_addon_enabled").format(ext))
 
     @commands.command()
     @commands.is_owner()
     async def unload(self, ctx, ext : str):
         if ext in self.fixed:
-            await ctx.send(self.bot.loc("ot_addon_fixed").format(addon=ext))
+            await ctx.send(self.bot.loc("ot_addon_fixed").format(ext))
             return
         self.bot.unload_extension(ext)
-        await ctx.send(self.bot.loc("ot_addon_disabled").format(addon=ext))
+        await ctx.send(self.bot.loc("ot_addon_disabled").format(ext))
 
 def setup(bot):
     bot.add_cog(OwnerTools(bot))
