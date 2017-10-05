@@ -2,10 +2,21 @@ import config
 from addons.tools.localize import LocalizeMe
 from discord.ext import commands
 
+import bot
+import discord
+
 class Events():
     def __init__(self, bot):
         self.bot = bot
         self.strings = LocalizeMe("strings", config.lang)
+        self.base = "v{} | {} Guilds | {}help"
+
+    async def on_ready(self):
+        print("Conectado a Discord!")
+        print("Usuario: {} / {}".format(self.bot.user, self.bot.user.id))
+        print("Guilds: {} ({} Usuarios)".format(len(self.bot.guilds), len(self.bot.users)))
+        game = discord.Game(name=self.base.format(bot.version, len(self.bot.guilds), config.prefix))
+        await self.bot.change_presence(game=game)
 
     async def on_command_error(self, ctx, error):
         if config.dev:
