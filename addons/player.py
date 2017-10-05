@@ -21,12 +21,14 @@ class Player():
     async def play(self, ctx, *, url : str):
         if ctx.voice_client is None:
             return await ctx.send(self.bot.loc("music_play_nope"))
-
-        if ctx.voice_client.is_playing():
+        elif ctx.voice_client.is_playing():
             return await ctx.send(self.bot.loc("music_play_already"))
 
         player = await YTDLSource.from_url(url, loop=self.bot.loop)
-        ctx.voice_client.play(player, after=lambda e: print(self.bot.loc("music_play_error").format(e)) if e else None)
+        ctx.voice_client.play(
+            player,
+            after=lambda e: print(self.bot.loc("music_play_error").format(e)) if e else None
+        )
         await ctx.send(self.bot.loc("music_play_now").format(player.title))
 
     @commands.command()
