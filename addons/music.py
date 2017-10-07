@@ -1,32 +1,35 @@
 from discord.ext import commands
 import config
 import discord
+import aiohttp
 import requests
 from bs4 import BeautifulSoup
 
 class Music():
     def __init__(self, bot):
         self.bot = bot
+        self.gurl = "https://api.genius.com/search?q={}"
+        self.gauth = {"Authorization": "Bearer " + config.genius}
 
     @commands.command()
     async def lyrics(self, ctx, *, query : str):
+        url = "https://api.genius.com/search?q=" + query
         try:
-            r = requests.get(
-                url="https://api.genius.com/search?q=" + query,
-                headers={"Authorization": "Bearer " + config.genius}
-            ).json()["response"]["hits"][0]["result"]
-
-            s = BeautifulSoup(requests.get(r["url"]).text, "html.parser")
-            l = s.find("div", class_="lyrics").get_text().strip()
+            async with aiohttp.ClientSession() as session:
+                async with session.get(url, headers=self.gauth) as resp:
+                    res = await resp.json()
+                    song = res["response"]["hits"][0]["result"]
+            soup = BeautifulSoup(requests.get(song["url"]).text, "html.parser")
+            lyric = soup.find("div", class_="lyrics").get_text().strip()
 
             embed = discord.Embed(
-                title=self.bot.loc("music_lyrics_title").format(r["title_with_featured"]),
-                description=l, url=r["url"])
-            embed.set_thumbnail(url=r["header_image_thumbnail_url"])
+                title=self.bot.loc("music_lyrics_title").format(song["title_with_featured"]),
+                description=lyric, url=song["url"])
+            embed.set_thumbnail(url=song["header_image_thumbnail_url"])
         except IndexError:
             await ctx.send(self.bot.loc("music_lyrics_notfound").format(query))
         except discord.HTTPException:
-            await ctx.send(self.bot.loc("music_lyrics_toobig").format(r["url"]))
+            await ctx.send(self.bot.loc("music_lyrics_toobig").format(song["url"]))
         else:
             await ctx.send(embed=embed)
 
