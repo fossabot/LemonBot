@@ -36,7 +36,7 @@ class OwnerTools():
         if ext in self.fixed:
             await ctx.send(self.bot.loc("ot_addon_fixed").format(ext))
             return
-        self.bot.unload_extension(ext)
+        self.bot.unload_extension("addons." + ext)
         await ctx.send(self.bot.loc("ot_addon_disabled").format(ext))
 
 def setup(bot):
