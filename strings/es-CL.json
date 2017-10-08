@@ -3,14 +3,14 @@
 
     "events_ready": "Conectado a Discord!\nUsuario: {un} / {id}\nGuilds: {gc} ({gu} Usuarios)",
     "events_playing": "v{v} | {g} Guilds | {p}help",
-    "events_error_generic" : "Ha ocurrido un error:\n```{t}: {e}\n```",
+    "events_error_development" : "Ha ocurrido un error:\n```{t}: {e}\n```",
     "events_error_pmissing": "Ups parece que olvidaste un parametro (**{}**).",
     "events_error_pmdisabled": "Este comando no puede ser usado en mensajes privados.",
     "events_error_cooldown": "Debes esperar antes de volver a usar este comando, intenta en **{}** segundos.",
     "events_error_owneronly": "Solo el dueño del Bot puede usar este comando.",
     "events_error_u_cant": "No tienes permiso para usar este comando, si crees que es un error contacta a un administrador.",
     "events_error_b_cant": "El Bot no tiene permiso para completar esta operacion.",
-    "events_error_undefined": "Ha ocurrido un error inesperado, no se logro completar esta operacion.",
+    "events_error_generic": "Ha ocurrido un error inesperado, no se logro completar esta operacion.",
 
     "general_title": "Informacion y Ayuda de {}",
     "general_description": "Comandos: {c}\nRepositorio: {r}",

@@ -15,7 +15,7 @@ class Events():
 
     async def on_command_error(self, ctx, e):
         if self.bot.dev:
-            await ctx.send(self.bot.loc("events_error_generic").format(
+            await ctx.send(self.bot.loc("events_error_development").format(
                 t=type(e), e=e))
         else:
             if isinstance(e, commands.MissingRequiredArgument):
@@ -31,7 +31,7 @@ class Events():
             elif isinstance(e, commands.BotMissingPermissions):
                 await ctx.send(self.bot.loc("events_error_b_cant"))
             else:
-                await ctx.send(self.bot.loc("events_error_undefined"))
+                await ctx.send(self.bot.loc("events_error_generic"))
 
 def setup(bot):
     bot.add_cog(Events(bot))
