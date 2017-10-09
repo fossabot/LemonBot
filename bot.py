@@ -1,3 +1,9 @@
+__title__ = "LemonBot"
+__author__ = 'Lemon'
+__license__ = "CC BY-NC-SA 4.0"
+__copyright__ = "2016-2017 Lemon"
+__version__ = "1.0-beta.1"
+
 import sys
 import os
 
@@ -13,9 +19,9 @@ if __name__ == "__main__":
         "Base de LemonBot"
         def __init__(self):
             super().__init__(command_prefix=config.prefix)
-            self.version = "1.0-beta.1"
-            self.name = "LemonBot"
-            self.copy = "2017 Lemon"
+            self.version = __version__
+            self.name = __title__
+            self.copy = __copyright__
             self.lang = config.lang
             self.dev = config.dev
             self.web = "http://bot.justalemon.ml"
