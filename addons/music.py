@@ -1,5 +1,4 @@
 from discord.ext import commands
-import config
 import discord
 import aiohttp
 import requests
@@ -9,7 +8,7 @@ class Music():
     def __init__(self, bot):
         self.bot = bot
         self.gurl = "https://api.genius.com/search?q={}"
-        self.gauth = {"Authorization": "Bearer " + config.genius}
+        self.gauth = {"Authorization": "Bearer " + self.bot.config["tokens"]["genius"]}
 
     @commands.command()
     async def lyrics(self, ctx, *, query : str):

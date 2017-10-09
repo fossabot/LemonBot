@@ -4,15 +4,11 @@ __license__ = "CC BY-NC-SA 4.0"
 __copyright__ = "2016-2017 Lemon"
 __version__ = "1.0-beta.1"
 
-import sys
 import os
-
-sys.path.append(os.path.abspath(".."))
 
 if __name__ == "__main__":
     import logging
     import json
-    import config
     from discord.ext import commands
 
     class LemonBot(commands.Bot):
@@ -23,6 +19,7 @@ if __name__ == "__main__":
             self.name = __title__
             self.copy = __copyright__
             self.lang = "es-CL"
+            self.config = {}
             self.dev = False
             self.web = "http://bot.justalemon.ml"
             self.help = self.web + "/commands.html"
@@ -50,5 +47,9 @@ if __name__ == "__main__":
             j = json.loads(text)
             return j[string]
 
-    bot = LemonBot(config.prefix)
-    bot.run(config.token)
+    with open("config.json") as cfg:
+        config = json.loads(cfg.read())
+
+    bot = LemonBot()
+    bot.config = config
+    bot.run(config["tokens"]["discord"])
