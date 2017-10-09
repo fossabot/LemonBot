@@ -42,6 +42,7 @@ if __name__ == "__main__":
                         print("Error loading {}: {} / {}".format(addon, type(e), e))
 
         def loc(self, string: str, lang: str = None):
+            """Carga un string en cierto idioma"""
             if lang is None:
                 lang = self.lang
             with open("strings/" + lang + ".json") as of:
