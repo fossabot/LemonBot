@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     class LemonBot(commands.Bot):
         "Base de LemonBot"
-        def __init__(self, prefix: str):
+        def __init__(self, prefix: str = "&"):
             super().__init__(command_prefix=prefix)
             self.version = __version__
             self.name = __title__
