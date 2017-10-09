@@ -31,6 +31,7 @@ if __name__ == "__main__":
             self.remove_command("help")
 
         def load_extensions(self):
+            """Carga los Addons o Cogs desde el directorio respectivo."""
             for addon in os.listdir("addons"):
                 if addon.endswith(".py"):
                     addon_name = os.path.splitext(addon)[0]
@@ -40,7 +41,7 @@ if __name__ == "__main__":
                         print("Error loading {}: {} / {}".format(addon, type(e), e))
 
         def loc(self, string: str, lang: str = None):
-            """Carga un string en cierto idioma"""
+            """Carga un string en cierto idioma."""
             if lang is None:
                 lang = self.lang
             with open("strings/" + lang + ".json") as of:
