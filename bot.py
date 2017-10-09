@@ -30,6 +30,7 @@ if __name__ == "__main__":
 
             self.remove_command("help")
 
+        def load_extensions(self):
             for addon in os.listdir("addons"):
                 if addon.endswith(".py"):
                     addon_name = os.path.splitext(addon)[0]
@@ -52,4 +53,5 @@ if __name__ == "__main__":
 
     bot = LemonBot()
     bot.config = config
+    bot.load_extensions()
     bot.run(config["tokens"]["discord"])
