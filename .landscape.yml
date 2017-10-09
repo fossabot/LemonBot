@@ -1,7 +1,11 @@
+strictness: veryhigh
 python-targets:
   - 3
 pep8:
   full: true
+doc-warnings: true # Maybe
+test-warnings: false
+max-line-length: 100
 requirements:
   - reqs.txt
   - rtfd.txt
