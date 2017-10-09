@@ -17,19 +17,19 @@ if __name__ == "__main__":
 
     class LemonBot(commands.Bot):
         "Base de LemonBot"
-        def __init__(self):
-            super().__init__(command_prefix=config.prefix)
+        def __init__(self, prefix: str):
+            super().__init__(command_prefix=prefix)
             self.version = __version__
             self.name = __title__
             self.copy = __copyright__
-            self.lang = config.lang
-            self.dev = config.dev
+            self.lang = "es-CL"
+            self.dev = False
             self.web = "http://bot.justalemon.ml"
             self.help = self.web + "/commands.html"
             self.repo = "https://github.com/Lemon-CL/LemonBot"
             self.log = logging.getLogger(self.name)
             self.database = None # Porcia
-            self.prefix = config.prefix
+            self.prefix = prefix
 
             self.remove_command("help")
 
@@ -49,5 +49,5 @@ if __name__ == "__main__":
             j = json.loads(text)
             return j[string]
 
-    bot = LemonBot()
+    bot = LemonBot(config.prefix)
     bot.run(config.token)
