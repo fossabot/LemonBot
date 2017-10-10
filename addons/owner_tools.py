@@ -15,8 +15,8 @@ class OwnerTools():
     @commands.is_owner()
     async def guilds(self, ctx):
         glist = self.bot.loc("ot_guild_list")
-        for g in self.bot.guilds:
-            glist += "**{}** / *{}*\n".format(g.name, g.id)
+        for guild in self.bot.guilds:
+            glist += "**{}** / *{}*\n".format(guild.name, guild.id)
         glist += "\nTotal: **{}**".format(len(self.bot.guilds))
         await ctx.send(glist)
 
