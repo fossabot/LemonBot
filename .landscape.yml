@@ -12,3 +12,6 @@ requirements:
 autodetect: true
 ignore-paths:
   - docs/
+pep257:
+  disable:
+    - D102
