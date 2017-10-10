@@ -51,6 +51,7 @@ if __name__ == "__main__":
                     self.load_extension("addons." + addon_name)
 
         def loc(self, string: str, lang: str = None):
+            """Carga un string en un idioma especifico."""
             if lang is None:
                 lang = self.lang
             with open("strings/" + lang + ".json") as of:
