@@ -9,6 +9,7 @@ import os
 if __name__ == "__main__":
     import logging
     import json
+    import discord
     from discord.ext import commands
 
     class LemonBot(commands.Bot):
@@ -21,6 +22,7 @@ if __name__ == "__main__":
             self.lang = "es-CL"
             self.config = None
             self.dev = False
+            self.playing = "v{v} | {g} Guilds | {p}help"
             self.web = "http://bot.justalemon.ml"
             self.help = self.web + "/commands.html"
             self.repo = "https://github.com/Lemon-CL/LemonBot"
@@ -30,6 +32,17 @@ if __name__ == "__main__":
 
             self.remove_command("help")
 
+        async def on_ready(self):
+            if os.environ.get("CI") == "true":
+                return self.logout()
+
+            print(self.loc("events_ready").format(
+                un=self.user, id=self.user.id,
+                gc=len(self.guilds), gu=len(self.users)))
+            game = discord.Game(name=self.playing.format(
+                v=self.version, g=len(self.guilds), p=self.prefix))
+            await self.change_presence(game=game)
+
         def load_extensions(self):
             """Carga los Addons o Cogs desde el directorio respectivo."""
             for addon in os.listdir("addons"):
@@ -38,7 +51,6 @@ if __name__ == "__main__":
                     self.load_extension("addons." + addon_name)
 
         def loc(self, string: str, lang: str = None):
-            """Carga un string en cierto idioma."""
             if lang is None:
                 lang = self.lang
             with open("strings/" + lang + ".json") as of:

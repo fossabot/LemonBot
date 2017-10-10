@@ -5,13 +5,7 @@ class Events():
     def __init__(self, bot):
         self.bot = bot
 
-    async def on_ready(self):
-        print(self.bot.loc("events_ready").format(
-            un=self.bot.user, id=self.bot.user.id,
-            gc=len(self.bot.guilds), gu=len(self.bot.users)))
-        game = discord.Game(name=self.bot.loc("events_playing").format(
-            v=self.bot.version, g=len(self.bot.guilds), p=self.bot.prefix))
-        await self.bot.change_presence(game=game)
+    
 
     async def on_command_error(self, ctx, e):
         if self.bot.dev:

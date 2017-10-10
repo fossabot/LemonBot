@@ -2,7 +2,6 @@
     "base_subcommand_none": "No has especificado una accion para realizar.",
 
     "events_ready": "Conectado a Discord!\nUsuario: {un} / {id}\nGuilds: {gc} ({gu} Usuarios)",
-    "events_playing": "v{v} | {g} Guilds | {p}help",
     "events_error_development" : "Ha ocurrido un error:\n```{t}: {e}\n```",
     "events_error_pmissing": "Ups parece que olvidaste un parametro (**{}**).",
     "events_error_pmdisabled": "Este comando no puede ser usado en mensajes privados.",
