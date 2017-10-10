@@ -33,7 +33,7 @@ if __name__ == "__main__":
             self.remove_command("help")
 
         async def on_ready(self):
-            if os.environ.get("CI") == "true":
+            if os.environ.get("CI") in ["true", "True"]:
                 print("Travis CI or AppVeyor Detected, Logging off...")
                 await self.logout()
 
@@ -62,7 +62,7 @@ if __name__ == "__main__":
 
     bot = LemonBot()
 
-    if os.environ.get("CI") == "true":
+    if os.environ.get("CI") in ["true", "True"]:
         bot.dev = True
         bot.load_extensions()
         bot.run(os.environ.get("DISCORD_TOKEN"))
