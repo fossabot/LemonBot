@@ -34,7 +34,8 @@ if __name__ == "__main__":
 
         async def on_ready(self):
             if os.environ.get("CI") == "true":
-                return self.logout()
+                print("Travis CI or AppVeyor Detected, Logging off...")
+                await self.logout()
 
             print(self.loc("events_ready").format(
                 un=self.user, id=self.user.id,
