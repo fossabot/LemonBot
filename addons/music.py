@@ -33,5 +33,5 @@ class Music():
             await ctx.send(embed=embed)
 
 def setup(bot):
-    bot.add_cog(Music(bot))
-    
+    if bot.config is not None:
+        bot.add_cog(Music(bot))

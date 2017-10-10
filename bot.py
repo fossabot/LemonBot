@@ -19,7 +19,7 @@ if __name__ == "__main__":
             self.name = __title__
             self.copy = __copyright__
             self.lang = "es-CL"
-            self.config = {}
+            self.config = None
             self.dev = False
             self.web = "http://bot.justalemon.ml"
             self.help = self.web + "/commands.html"
