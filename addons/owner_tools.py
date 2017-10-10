@@ -22,7 +22,7 @@ class OwnerTools():
 
     @commands.command()
     @commands.is_owner()
-    async def load(self, ctx, ext : str):
+    async def load(self, ctx, ext: str):
         try:
             self.bot.load_extension("addons." + ext)
         except ImportError:
@@ -32,7 +32,7 @@ class OwnerTools():
 
     @commands.command()
     @commands.is_owner()
-    async def unload(self, ctx, ext : str):
+    async def unload(self, ctx, ext: str):
         if ext in self.fixed:
             await ctx.send(self.bot.loc("ot_addon_fixed").format(ext))
             return

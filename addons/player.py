@@ -18,7 +18,7 @@ class Player():
             await ctx.send(self.bot.loc("music_join_nope"))
 
     @commands.command()
-    async def play(self, ctx, *, url : str):
+    async def play(self, ctx, *, url: str):
         if ctx.voice_client is None:
             return await ctx.send(self.bot.loc("music_play_nope"))
         elif ctx.voice_client.is_playing():
@@ -32,7 +32,7 @@ class Player():
         await ctx.send(self.bot.loc("music_play_now").format(player.title))
 
     @commands.command()
-    async def volume(self, ctx, volume : int):
+    async def volume(self, ctx, volume: int):
         if ctx.voice_client is None:
             return await ctx.send(self.bot.loc("music_volume_nope"))
 

@@ -11,7 +11,7 @@ class Music():
         self.gauth = {"Authorization": "Bearer " + self.bot.config["tokens"]["genius"]}
 
     @commands.command()
-    async def lyrics(self, ctx, *, query : str):
+    async def lyrics(self, ctx, *, query: str):
         url = "https://api.genius.com/search?q=" + query
         try:
             async with aiohttp.ClientSession() as session:
