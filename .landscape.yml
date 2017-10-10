@@ -10,3 +10,5 @@ requirements:
   - reqs.txt
   - rtfd.txt
 autodetect: true
+ignore-paths:
+  - docs/
