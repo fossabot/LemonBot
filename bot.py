@@ -36,13 +36,13 @@ if __name__ == "__main__":
             if os.environ.get("CI") in ["true", "True"]:
                 print("Travis CI or AppVeyor Detected, Logging off...")
                 await self.logout()
-
-            print(self.loc("events_ready").format(
-                un=self.user, id=self.user.id,
-                gc=len(self.guilds), gu=len(self.users)))
-            game = discord.Game(name=self.playing.format(
-                v=self.version, g=len(self.guilds), p=self.prefix))
-            await self.change_presence(game=game)
+            else:
+                print(self.loc("events_ready").format(
+                    un=self.user, id=self.user.id,
+                    gc=len(self.guilds), gu=len(self.users)))
+                game = discord.Game(name=self.playing.format(
+                    v=self.version, g=len(self.guilds), p=self.prefix))
+                await self.change_presence(game=game)
 
         def load_extensions(self):
             """Carga los Addons o Cogs desde el directorio respectivo."""
