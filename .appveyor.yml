@@ -3,9 +3,9 @@ environment:
     - PYTHON: "C:\\Python36-x64"
 
 install:
-  - "pip install -U -r reqs.txt"
+  - "%PYTHON%\\python.exe -m pip install -U -r reqs.txt"
 
 build: off
 
 test_script:
-  - "python bot.py"
+  - "%PYTHON%\\python.exe bot.py"
