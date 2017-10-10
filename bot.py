@@ -35,10 +35,7 @@ if __name__ == "__main__":
             for addon in os.listdir("addons"):
                 if addon.endswith(".py"):
                     addon_name = os.path.splitext(addon)[0]
-                    try:
-                        self.load_extension("addons." + addon_name)
-                    except Exception as e:
-                        print("Error loading {}: {} / {}".format(addon, type(e), e))
+                    self.load_extension("addons." + addon_name)
 
         def loc(self, string: str, lang: str = None):
             """Carga un string en cierto idioma."""
@@ -49,10 +46,16 @@ if __name__ == "__main__":
             j = json.loads(text)
             return j[string]
 
-    with open("config.json") as cfg:
-        config = json.loads(cfg.read())
-
     bot = LemonBot()
-    bot.config = config
-    bot.load_extensions()
-    bot.run(config["tokens"]["discord"])
+
+    if os.environ.get("CI") == "true":
+        bot.dev = True
+        bot.load_extensions()
+        bot.run(os.environ.get("DISCORD_TOKEN"))
+    else:
+        with open("config.json") as cfg:
+            config = json.loads(cfg.read())
+
+        bot.config = config
+        bot.load_extensions()
+        bot.run(config["tokens"]["discord"])
