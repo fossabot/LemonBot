@@ -4,7 +4,7 @@ import aiohttp
 import requests
 from bs4 import BeautifulSoup
 
-class Music():
+class Music:
     def __init__(self, bot):
         self.bot = bot
         self.gurl = "https://api.genius.com/search?q={}"

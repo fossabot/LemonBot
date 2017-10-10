@@ -1,6 +1,6 @@
 from discord.ext import commands
 
-class OwnerTools():
+class OwnerTools:
     def __init__(self, bot):
         self.bot = bot
         self.fixed = ["general", "owner_tools"]

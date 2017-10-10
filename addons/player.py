@@ -1,7 +1,7 @@
 from discord.ext import commands
 from addons.tools.ytdl import YTDLSource
 
-class Player():
+class Player:
     def __init__(self, bot):
         self.bot = bot
 
